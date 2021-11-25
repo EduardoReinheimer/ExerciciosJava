@@ -27,8 +27,30 @@ public class Main {
 		//Testamos Update da Agenda
 		ag.update(p1);
 		
+		//Criamos uma nova pessoa e adicionamos
+		p2 = new Pessoa(8, "Frederico", "out@ro.com", "88899-9998", cal);
+		ag.add(p2);
 		
+		//Deletamos o primeiro
+		ag.remove(p1);
+		
+		//E o adicionamos de novo
+		ag.add(p1);
+		
+		//Agora criamos nomes parecidos com Eduardo e uns que não e vamos adicionando a lista. 
+		ag.add(new Pessoa(3, "Eder", "edu@ardo.com", "88899-9998", cal));
+		ag.add(new Pessoa(4, "Ederson", "edu@ardo.com", "88899-9998", cal));
+		ag.add(new Pessoa(5, "Edilson", "edu@ardo.com", "88899-9998", cal));
+		ag.add(new Pessoa(6, "Rafael", "edu@ardo.com", "88899-9998", cal));
+		
+		//Printa lista
 		System.out.println(ag);
+		
+		//Teste where name like 
+		System.out.println(ag.whereNameLike("Ed"));
+		
+		//Teste
+		System.out.println(ag.whereDomainLike("ro"));
 		
 	}
 

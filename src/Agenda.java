@@ -24,8 +24,28 @@ public class Agenda {
 		}
 	}
 	
-	public void delete(Pessoa pessoaDelete) {
+	public void remove(Pessoa pessoaDelete) {
 		pessoas.remove(pessoaDelete);
+	}
+	
+	public ArrayList<Pessoa> whereNameLike(String busca){
+		ArrayList<Pessoa> buscaPessoas = new ArrayList<Pessoa>();
+		pessoas.forEach((pessoa) -> {
+			if(pessoa.nome.contains(busca))
+				buscaPessoas.add(pessoa);
+		});
+		
+		return buscaPessoas;
+	}
+	
+	public ArrayList<Pessoa> whereDomainLike(String busca){
+		ArrayList<Pessoa> buscaPessoas = new ArrayList<Pessoa>();
+		pessoas.forEach((pessoa) -> {
+			if(pessoa.email.GetDomain().contains(busca))
+				buscaPessoas.add(pessoa);
+		});
+		
+		return buscaPessoas;
 	}
 
 	@Override
